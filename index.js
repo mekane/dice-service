@@ -11,6 +11,9 @@ var server = http.createServer(function (request, response) {
     var requestInfo = url.parse(request.url, true);
     var params = requestInfo.query;
 
+    var ip = request.connection.remoteAddress;
+    console.log('request from ' + ip + ' for ', params);
+
     if (params.dice) {
         if (params.target)
             sendOddsForTarget(params.dice, params.target, params.modifier, params.precision);
