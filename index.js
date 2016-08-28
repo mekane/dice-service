@@ -12,7 +12,7 @@ var server = http.createServer(function (request, response) {
     var params = requestInfo.query;
 
     var ip = request.connection.remoteAddress;
-    console.log('request from ' + ip + ' for ', params);
+    console.log(new Date().toISOString() + ' request from ' + ip + ' for ', params);
 
     if (params.dice) {
         if (params.target)
